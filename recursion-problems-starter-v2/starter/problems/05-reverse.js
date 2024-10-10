@@ -16,6 +16,16 @@ reverse(""); // ""
 
 function reverse(string, reversed = []) {
 
+  if (string.length === 0) {
+    return '';
+  }
+
+  reversed.unshift(string[0]);
+
+  reverse(string.slice(1), reversed);
+
+  return reversed.join('');
+
 
 }
 
