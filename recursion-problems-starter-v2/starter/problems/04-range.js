@@ -13,6 +13,20 @@ range(7, 6); // []
 
 // your code here
 
+function range(start, end, numbers = [start]) {
+  if (end < start) {
+    return [];
+  }
+
+  if (numbers.length < end - 1) {
+    numbers = range(start + 1, end, numbers);
+  }
+
+  numbers.push(start);
+
+  return numbers;
+}
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
