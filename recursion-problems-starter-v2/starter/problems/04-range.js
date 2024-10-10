@@ -13,16 +13,16 @@ range(7, 6); // []
 
 // your code here
 
-function range(start, end, numbers = [start]) {
+function range(start, end, numbers = []) {
   if (end < start) {
     return [];
   }
 
-  if (numbers.length < end - 1) {
+  if (numbers.length < end - start - 1) {
     numbers = range(start + 1, end, numbers);
   }
 
-  numbers.push(start);
+  numbers.unshift(start);
 
   return numbers;
 }

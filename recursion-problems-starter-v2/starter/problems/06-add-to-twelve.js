@@ -14,6 +14,10 @@ addToTwelve([1]); // false
 
 // your code here
 
+function addToTwelve(arr) {
+  
+}
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = addToTwelve;

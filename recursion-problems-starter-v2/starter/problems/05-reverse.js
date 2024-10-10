@@ -14,7 +14,10 @@ reverse(""); // ""
 
 // your code here
 
+function reverse(string, reversed = []) {
 
+
+}
 
 
 
