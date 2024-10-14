@@ -14,10 +14,43 @@ addToTwelve([1]); // false
 
 // your code here
 
-function addToTwelve(arr) {
-  
-}
+// function addToTwelve(arr) {
+//   if (arr.length > 1) {
+//     let sum = arr[0] + arr[1];
+//     console.log(sum)
+//     if (sum === 12) {
+//       return true;
+//     }
 
+//     addToTwelve(arr.slice(1));
+//   }
+
+// }
+
+// function addToTwelve(arr) {
+//   if (arr.length <= 1) {
+//     return false;
+//   }
+
+//   if (arr[0] + arr[1] != 12) {
+//     addToTwelve(arr.slice(1));
+//   }
+
+//   return true;
+// }
+
+function addToTwelve(arr) {
+  if (arr.length <= 1) {
+    return false;
+  }
+
+  if (arr[0] + arr[1] === 12) {
+    return true;
+  }
+
+  return addToTwelve(arr.slice(1))
+
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = addToTwelve;
