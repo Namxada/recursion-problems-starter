@@ -58,8 +58,6 @@ function advancedExponent(b, n) {
     return (b * advancedExponent(b, n - 1))
   }
 
-
-
 }
 
 

@@ -20,11 +20,26 @@ fibonacci(10); // 55
 ***********************************************************************/
 
 // your code here
-  
+
+function fibonacci(n, fibArr = [0,1,1]) {
+  if (n === 1) {
+    return 1;
+  }
+
+  if (fibArr.length - 1 === n){
+    return fibArr[n];
+  }
+
+  if (fibArr.length - 1 < n) {
+    let newFibNum = fibArr[fibArr.length - 1] + fibArr[fibArr.length - 2];
+    fibArr.push(newFibNum);
+    return fibonacci(n, fibArr);
+  }
+}
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
   module.exports = fibonacci;
 } catch (e) {
   module.exports = null;
 }
-  
