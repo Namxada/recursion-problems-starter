@@ -23,6 +23,25 @@ sort([]); // []
 
 function sort(nums, sorted = []) {
   // your code here
+  if (nums.length === 0) {
+    return sorted;
+  }
+
+  let smallestNum = Math.min(...nums);
+  let index = nums.indexOf(smallestNum);
+
+  sorted.push(smallestNum);
+
+  let reducedNums = [];
+  if (index === 0) {
+    reducedNums = nums.slice(1);
+  } else {
+    reducedNums = nums.slice(0,index).concat(nums.slice(index + 1, nums.length));
+  }
+
+
+  return sort(reducedNums, sorted);
+
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
