@@ -12,8 +12,19 @@ flatten([1, [2, [3]]]); // [1, 2, 3]
 
 // your code here
 function flatten(arr, newArr = []) {
-  return console.log(arr.length)
+  if (arr.length === 0) {
+    return newArr;
+  }
+
+  if (Array.isArray(arr[0])) {
+    return flatten(arr[0], newArr)
+  } else {
+    newArr.push(arr[0]);
+  }
+
+  return flatten(arr.slice(1), newArr);
 }
+
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
