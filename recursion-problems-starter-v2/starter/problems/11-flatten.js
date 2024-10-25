@@ -25,18 +25,32 @@ flatten([1, [2, [3]]]); // [1, 2, 3]
 //   return flatten(arr.slice(1), newArr);
 // }
 
-function flatten(arr, newArr = [], index = 0) {
-  if (index === arr.length) {
-    return newArr;
+// function flatten(arr, newArr = [], index = 0) {
+//   if (index === arr.length) {
+//     return newArr;
+//   }
+
+//   if (Array.isArray(arr[index])) {
+//     return flatten(arr[index], newArr, index = 0);
+//   } else {
+//     newArr.push(arr[index]);
+//   }
+
+//   return flatten(arr, newArr, index + 1);
+// }
+
+function flatten(arr) {
+  let res = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      res = res.concat(flatten(arr[i]));
+    } else {
+      res.push(arr[i]);
+    }
   }
 
-  if (Array.isArray(arr[index])) {
-    return flatten(arr[index], newArr, index = 0);
-  } else {
-    newArr.push(arr[index]);
-  }
-
-  return flatten(arr, newArr, index + 1);
+  return res;
 }
 
 
