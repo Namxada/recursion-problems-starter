@@ -11,19 +11,19 @@ flatten([1, [2, [3]]]); // [1, 2, 3]
 ***********************************************************************/
 
 // your code here
-// function flatten(arr, newArr = []) {
-//   if (arr.length === 0) {
-//     return newArr;
-//   }
+function flatten(arr, newArr = []) {
+  if (arr.length === 0) {
+    return newArr;
+  }
 
-//   if (Array.isArray(arr[0])) {
-//     return flatten(arr[0], newArr)
-//   } else {
-//     newArr.push(arr[0]);
-//   }
+  if (Array.isArray(arr[0])) {
+    flatten(arr[0], newArr);
+  } else {
+    newArr.push(arr[0]);
+  }
 
-//   return flatten(arr.slice(1), newArr);
-// }
+  return flatten(arr.slice(1), newArr);
+}
 
 // function flatten(arr, newArr = [], index = 0) {
 //   if (index === arr.length) {
@@ -39,19 +39,19 @@ flatten([1, [2, [3]]]); // [1, 2, 3]
 //   return flatten(arr, newArr, index + 1);
 // }
 
-function flatten(arr) {
-  let res = [];
+// function flatten(arr) {
+//   let res = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    if (Array.isArray(arr[i])) {
-      res = res.concat(flatten(arr[i]));
-    } else {
-      res.push(arr[i]);
-    }
-  }
+//   for (let i = 0; i < arr.length; i++) {
+//     if (Array.isArray(arr[i])) {
+//       res = res.concat(flatten(arr[i]));
+//     } else {
+//       res.push(arr[i]);
+//     }
+//   }
 
-  return res;
-}
+//   return res;
+// }
 
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
