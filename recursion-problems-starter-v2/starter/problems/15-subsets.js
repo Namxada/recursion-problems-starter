@@ -16,26 +16,6 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 
 // your code here
 
-// function subsets(arr, index = 0) {
-//   let subsetArr = [[]];
-
-//   if (arr.length === 0) {
-//     return subsetArr;
-//   }
-
-//   if (index === arr.length) {
-//     return subsetArr;
-//   }
-
-//   let newArr = subsetArr.map(function(el) {
-//     return el.concat(arr[index]);
-//   })
-
-//   subsetArr = subsetArr.concat(newArr);
-
-//   return subsets(arr, index++)
-// }
-
 function subsets(arr, subsetArr = [[]]) {
 
   if (arr.length === 0) {
