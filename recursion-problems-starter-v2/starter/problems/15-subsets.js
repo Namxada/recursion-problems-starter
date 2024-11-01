@@ -1,7 +1,7 @@
 /***********************************************************************
 Write a function called `subsets` that will return all subsets of an array.
 
-Examples: 
+Examples:
 
 subsets([]) // [[]]
 subsets([1]) // [[], [1]]
@@ -15,6 +15,54 @@ Hint: For subsets([1, 2, 3]), there are two kinds of subsets:
 ***********************************************************************/
 
 // your code here
+// add empty array
+// add singular array containing each element of original arr
+
+// function subsets(arr) {
+//   let subsetArr = [[]];
+//   let newArr = [];
+
+//   if (arr.length === 0) {
+//     return subsetArr;
+//   }
+
+//   for (let i = 0; i < subsetArr.length; i++) {
+//     newArr.push(subsetArr[i].concat(arr[0]));
+//   }
+
+//   subsetArr = subsetArr.concat(newArr);
+
+
+//   return subsets(arr.slice(1));
+
+// }
+
+// function subsets(arr, subsetArr = [[]]) {
+
+//   if (arr.length === 0) {
+//     return subsetArr;
+//   }
+
+//   let newSubsets = subsetArr.map(function(el) {
+//     return el.concat(arr[0]);
+//   });
+
+//   subsetArr = subsetArr.concat(newSubsets);
+
+//   return subsets(arr.slice(1));
+// }
+
+function subsets(arr) {
+  let res = [[]];
+
+  for (let i = 0; i < arr.length; i++) {
+    res = [res, res.concat(arr[i]), ...subsets(arr.slice(1))]
+  }
+
+  console.log(res);
+
+  return res;
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS LINE*****************/
 try {
